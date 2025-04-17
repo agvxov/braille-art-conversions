@@ -16,9 +16,10 @@ What unicode has is the so called "Eight-dot braille" variation.
 ## Encoding
 Logically enough,
 every significant bit corresponst to a single dot of the character.
-However, the first 6 bits possess priority
+However, the first 6 bits poss priority
 
 | bit | char mask |
+| :---: | :---: |
 | 0b00000001 | ⠁ |
 | 0b00000010 | ⠂ |
 | 0b0000010  | ⠄ |
@@ -29,7 +30,7 @@ However, the first 6 bits possess priority
 | 0b1000000  | ⢀ |
 
 As the above implies,
-there is also a blank character `⠀` for all character masks off,
+there is also a blank character (`⠀`) for all character masks off,
 which is quite easy to mistake for a normal space.
 
 ## Transformations
@@ -46,20 +47,26 @@ Inverting a braille pattern ('⢷' -> '⡈') can be expressed as:
 
 ### Mirroring/flipping
 Mirroring a braille pattern ('⢪' -> '⡕') can be expressed as
-rotating bits 1-4 and 5-6 with their respective half widths,
-performing a logical or on the result and adding it to the range base (0x2800).
+rotating bits 1-4 and 5-6 with their respective half widths.
+This is easiest if said bits a separated, rotated,
+logical OR'ed and the base (0x2800) is added back.
 
 [!NOTE]
 "Rotating" in the sense as defined by x86.
-Since we are rotating by half the bit widths,
-the direction is irrelevant,
-both left and right rotation yield the same result.
+Since we are rotating by half the bit range lenght widths,
+the direction is irrelevant.
+Both left and right rotation will yield the same result.
 
 ## Implementation
 The repository contains a
-[Perl implementation to the afore mentioned operations]().
+[Perl implementation to the afore mentioned operations](braille-art.pl).
+
 Here is a copy of the help message:
 
+    ./braille-art.pl <verb>
+        table  - print braille/inverted/flipped table
+        invert - perform inversion on stdin
+        flip   - perform mirroring on stdin (both line and character wise)
 
 Here is an example of its usage:
 ```sh
