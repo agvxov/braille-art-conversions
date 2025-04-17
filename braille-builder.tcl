@@ -58,7 +58,7 @@ for {set col 0} {$col < 2} {incr col} {
         set idx [expr {$row + $col * 4}]
         set bit [lindex $braille_order $idx]
 
-        button .i.b$bit -text "bit $bit" -width 6 \
+        button .i.b$bit -text "bit [expr $bit + 1]" -width 6 \
             -command [list toggle_bit $bit]
         grid .i.b$bit -row [expr {$row + 1}] -column [expr $col * 3] -padx 5 -pady 5
 
