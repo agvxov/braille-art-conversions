@@ -51,11 +51,11 @@ rotating bits 1-4 and 5-6 with their respective half widths.
 This is easiest if said bits a separated, rotated,
 logical OR'ed and the base (0x2800) is added back.
 
-[!NOTE]
-"Rotating" in the sense as defined by x86.
-Since we are rotating by half the bit range lenght widths,
-the direction is irrelevant.
-Both left and right rotation will yield the same result.
+> [!NOTE]
+> "Rotating" in the sense as defined by x86.
+> Since we are rotating by half the bit range lenght widths,
+> the direction is irrelevant.
+> Both left and right rotation will yield the same result.
 
 ## Implementation
 The repository contains a
