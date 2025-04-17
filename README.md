@@ -130,6 +130,7 @@ $ cat chad.utf | braille-art.pl flip
 ## Builder
 There is also a [builder Tcl/Tk GUI](braille-builder.tcl) included in this repo.
 This is how it looks:
+
 ![](builder.png)
 
 As you toggle the dots,
