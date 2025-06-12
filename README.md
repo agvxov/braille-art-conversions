@@ -16,7 +16,7 @@ What unicode has is the so called "Eight-dot braille" variation.
 ## Encoding
 Logically enough,
 every significant bit corresponst to a single dot of the character.
-However, the first 6 bits poss priority
+However, the first 6 bits posses priority.
 
 | bit | char mask |
 | :---: | :---: |
@@ -48,7 +48,7 @@ Inverting a braille pattern ('⢷' -> '⡈') can be expressed as:
 ### Mirroring/flipping
 Mirroring a braille pattern ('⢪' -> '⡕') can be expressed as
 rotating bits 1-4 and 5-6 with their respective half widths.
-This is easiest if said bits a separated, rotated,
+This is easiest if said bits are separated, rotated,
 logical OR'ed and the base (0x2800) is added back.
 
 > [!NOTE]
